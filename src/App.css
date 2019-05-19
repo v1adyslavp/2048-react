@@ -1,33 +1,222 @@
+body {
+  background: #faf8ef;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App-nav {
+  margin: 45px auto;
+  text-align: left;
+  width: 455px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.App-nav-status-bar {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.App-nav-status-bar-2048-label {
+  color: #776e65;
+  font-size: 5em;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.App-nav-status-bar-score-table {
+  right: 0;
+  position: absolute;
+  top: 0;
+}
+
+.App-nav-status-bar-score-table div {
+  display: inline-block;
+}
+
+.App-nav-status-bar-score-table-cur,
+.App-nav-status-bar-score-table-best {
+  background: #bbada0;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.App-nav-status-bar-score-table-cur p,
+.App-nav-status-bar-score-table-best p {
+  color: #eee4da;
+  font-size: .8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.App-nav-status-bar-score-table-cur span,
+.App-nav-status-bar-score-table-best span {
   color: white;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.App-nav-restart-bar {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-nav-restart-bar-join-label {
+  color: #776e65;
+}
+
+.App-nav-restart-bar-join-btn {
+  background: #8f7a66;
+  border: none;
+  border-radius: 3px;
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  height: 40px;
+  letter-spacing: 1px;
+  margin: auto;
+  outline: 0;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.App-field {
+  background: #bbada0;
+  border: 7px solid #bbada0;
+  border-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+  width: 455px;
+}
+
+.App-field-row {
+  display: inline-flex;
+}
+
+
+.App-field-cell {
+  background: #cdc1b4;
+  border: 7px solid #bbada0;
+  border-radius: 10px;
+  height: 100px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.App-field-cell-tile {
+  background: red;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 100px;
+  height: 100px;
+  width: 100px;
+}
+
+div[data-tile-value="2"] {
+  background: #eee4da;
+  color: #776e65;
+  font-size: 50px;
+}
+
+div[data-tile-value="4"] {
+  background: #ede0c8;
+  color: #776e65;
+  font-size: 50px;
+}
+
+div[data-tile-value="8"] {
+  background: #f2b179;
+  font-size: 50px;
+}
+
+div[data-tile-value="16"] {
+  background: #f59563;
+  font-size: 50px;
+}
+
+div[data-tile-value="32"] {
+  background: #f67c5f;
+  font-size: 45px;
+}
+
+div[data-tile-value="64"] {
+  background: #f65e3b;
+  font-size: 45px;
+}
+
+div[data-tile-value="128"] {
+  background: #edcf72;
+  font-size: 40px;
+}
+
+div[data-tile-value="256"] {
+  background: #edcc61;
+  font-size: 40px;
+}
+
+div[data-tile-value="512"] {
+  background: #edc850;
+  font-size: 40px;
+}
+
+div[data-tile-value="1024"] {
+  background: #edc53f;
+  font-size: 35px;
+}
+
+div[data-tile-value="2048"] {
+  background: #edc22e;
+  font-size: 35px;
+}
+
+.App-field-lose-modal,
+.App-field-win-modal {
+  border-radius: 7px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.App-field-lose-modal {
+  background: rgba(255,255,255, .6);
+}
+
+.App-field-win-modal {
+  background: rgba(255,215,0, .35);
+}
+
+.App-field-lose-modal-message,
+.App-field-win-modal-message {
+  margin: 123px auto;
+}
+
+.App-field-lose-modal-message p,
+.App-field-win-modal-message p {
+  color: #776e65;
+  font-size: 3.8em;
+  font-weight: bold;
+}
+
+.App-field-lose-modal-message button,
+.App-field-win-modal-message button {
+  background: #8f7a66;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  outline: 0;
+  padding: 10px 20px;
+}
+
+.App-field-win-modal-message button {
+  margin-right: 10px;
 }
